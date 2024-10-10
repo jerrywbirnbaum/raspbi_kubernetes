@@ -24,6 +24,6 @@
 # appVersion: "1.16.0"
 dependencies:
   - name: prometheus
-    version: 22.7.0
+    version: 61.1.1
     repository: https://prometheus-community.github.io/helm-charts
 
