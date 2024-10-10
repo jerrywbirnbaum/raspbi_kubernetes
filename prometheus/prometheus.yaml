@@ -11,7 +11,7 @@ spec:
     chart: kube-prometheus-stack
   syncPolicy:
     syncOptions:
-    - Replace=true
+    - ServerSideApply=true
 destination:
   server: https://kubernetes.default.svc
   namespace: prometheus
