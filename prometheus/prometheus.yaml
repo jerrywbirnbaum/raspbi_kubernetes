@@ -9,6 +9,9 @@ spec:
     repoURL: https://prometheus-community.github.io/helm-charts
     targetRevision: 65.1.1
     chart: kube-prometheus-stack
+  syncPolicy:
+    syncOptions:
+    - Replace=true
 destination:
   server: https://kubernetes.default.svc
   namespace: prometheus
