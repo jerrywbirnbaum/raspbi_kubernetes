@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "react-app.fullname" . }}
+  labels:
+    # replaces this value with the chart name
+    app: {{ include "react-app.name" . }}
+spec:
+  # this gets the value of replicas from the values.yaml file
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "react-app.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "react-app.name" . }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        # gets the image repository value from the values.yaml file
+        image: {{ .Values.image.repository }}
+        imagePullPolicy: {{ .Values.image.pullPolicy}}
+        ports:
+        - containerPort: 3000
