@@ -1,12 +1,12 @@
 # Fetching the latest node image on alpine linux
-FROM node:alpine
+FROM node:23-alpine
 
 # Set the working directory
 WORKDIR /app
 # Copy the package.json and package-lock.json files
 COPY package*.json ./
 # Install the dependencies
-RUN npm install
+RUN npm install --verbose
 # Copy the app files
 COPY . .
 # Build the app
